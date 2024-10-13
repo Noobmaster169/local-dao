@@ -75,7 +75,7 @@ const CommunityPage = () => {
       method: "function getCounter() public view returns (uint256)",
       params: [],
     });
-    alert("Successful")
+    //alert("Successful")
     const items: any = [];
     for (let i = 1; i <= counter; i++) {
       const item: any = await readContract<any, any, any>({

@@ -39,7 +39,6 @@ import { getContract, createThirdwebClient } from "thirdweb";
 import ABI from "@/contract/verifier/abi.json";
 import { scrollSepolia } from "@/utils/chain";
 import JSONUploader from "./JSONUploader";
-import { Identity } from "@semaphore-protocol/core";
 import {
   prepareContractCall,
   toWei,
@@ -48,8 +47,6 @@ import {
 } from "thirdweb";
 import { Account, createWallet } from "thirdweb/wallets";
 import { ThirdwebSDK, getProviderFromRpcUrl} from "@thirdweb-dev/sdk";
-// import { ethers } from "ethers";
-// import { useActiveAccount } from "thirdweb/react";
 
 const client: any = createThirdwebClient({
   clientId: process.env.NEXT_PUBLIC_THIRDWEB_CLIENT_ID as string,
@@ -82,8 +79,8 @@ const UploadJSONForm = ({
   const [isUploading, setIsUploading] = useState(false);
   const [files, setFiles] = useState<File[]>([]);
   const [isBuilding, setIsBuilding] = useState(false);
-  const [result, setResult] = useState<ContractResponse | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  // const [result, setResult] = useState<ContractResponse | null>(null);
+  // const [error, setError] = useState<string | null>(null);
 
   const [proof, setProof] = useState<any>("");
   const [formData, setFormData] = useState({
@@ -161,27 +158,27 @@ const UploadJSONForm = ({
     setIsBuilding(true);
     if(!proof){alert("Please upload a file"); return}
 
-    const _identity = new Identity();
-    let data = {
-      proof: JSON.parse(proof),
-      identityCommitment: {
-          commit: _identity.commitment.toString()
-      },
-    }
-    let response = await fetch("api/tlsn", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-    })
+    // const _identity = new Identity();
+    // let data = {
+    //   proof: JSON.parse(proof),
+    //   identityCommitment: {
+    //       commit: _identity.commitment.toString()
+    //   },
+    // }
+    // let response = await fetch("api/tlsn", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify(data),
+    // })
 
-    if (response.status === 200) {
-      //await verifyIdentity();
+    // if (response.status === 200) {
+    //   //await verifyIdentity();
       setHasUploaded(true);
       setCountry(values.country);
       setRegion(values.region);
-    }else{
-      alert("Error in generating proof")
-    }
+    // }else{
+    //   alert("Error in generating proof")
+    // }
     setIsBuilding(false);
   }
 

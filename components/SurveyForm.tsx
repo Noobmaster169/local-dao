@@ -61,7 +61,7 @@ const client: any = createThirdwebClient({
 const contract: any = getContract({
   client,
   chain: baseSepolia,
-  address: "0x39683204f4822A75A3264a9e6583e9105fAD3fAc",
+  address: "0x8D888473bCdEa4E21da862FA2e2637e3c2ae86fB",
   abi: ABI as any,
 });
 

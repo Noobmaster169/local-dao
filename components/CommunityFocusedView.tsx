@@ -74,7 +74,7 @@ const CommunityFocusedView = ({
   // border-[#40A4FF] border-[3px] shadow-[0_0_20px_#40A4FF]
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [reviewIsOpen, setReviewIsOpen] = useState(false);
-  const [isOwner, setIsOwner] = useState(true);
+  const [isOwner, setIsOwner] = useState(community._id == 2);
 
   const vote = async () => {
     const wallet = createWallet("io.metamask");

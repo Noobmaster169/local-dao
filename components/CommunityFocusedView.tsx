@@ -152,7 +152,7 @@ const CommunityFocusedView = ({
             {!isOwner && <button
               className={`font-semibold p-2 py-4 rounded-2xl flex items-center justify-center w-full text-lg text-white bg-[#40A4FF] 
               shadow-[0_0_30px_#40A4FF] drop-shadow-xl ${!selectedOption ? "opacity-50 pointer-events-none" : "opacity-100"} hover:bg-opacity-100 flex gap-2`}
-              onClick={() => {setIsOpen(false)}}
+              onClick={async () => {await vote(); setIsOpen(false)}}
               >
                 {false ? "Sending" : "Send Transaction"}
                 {false && <div className="animate-spin">
@@ -162,7 +162,7 @@ const CommunityFocusedView = ({
             {isOwner && <button
               className={`font-semibold px-3 py-4 rounded-2xl flex items-center justify-center w-full text-lg text-white bg-green-400 
               shadow-[0_0_20px_#4ade80] drop-shadow-xl hover:bg-opacity-100 gap-2`}
-              onClick={() => {setReviewIsOpen(true)}}
+              onClick={async() => {setReviewIsOpen(true)}}
               >
                 Open Result
               </button>}

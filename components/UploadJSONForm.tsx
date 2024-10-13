@@ -37,7 +37,7 @@ import {
 } from "@/utils/ipfs";
 import { getContract, createThirdwebClient } from "thirdweb";
 import ABI from "@/contract/verifier/abi.json";
-import { scrollSepolia } from "@/utils/chain";
+import { baseSepolia } from "@/utils/chain";
 import JSONUploader from "./JSONUploader";
 import {
   prepareContractCall,
@@ -54,7 +54,7 @@ const client: any = createThirdwebClient({
 
 const contract: any = getContract({
   client,
-  chain: scrollSepolia,
+  chain: baseSepolia,
   address: "0xD0940e213D8dD9EA159ed2C084e69760065cCA1f",
   abi: ABI as any,
 });

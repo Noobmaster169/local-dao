@@ -12,26 +12,16 @@ import {
   Chain,
 } from "thirdweb";
 import ABI from "@/contract/localDAO/abi.json";
-//import { scrollSepolia } from 'viem/chains';
-import { scrollSepolia } from "@/utils/chain";
+//import { baseSepolia } from 'viem/chains';
+import { baseSepolia } from "@/utils/chain";
 
 const client: any = createThirdwebClient({
   clientId: process.env.NEXT_PUBLIC_THIRDWEB_CLIENT_ID as string,
 });
-// const scrollSepoliaChain = {
-//   ...scrollSepolia,
-//   rpc: scrollSepolia.rpcUrls.default.http[0],
-//   blockExplorers: [
-//     {
-//       name: scrollSepolia.blockExplorers.default.name,
-//       url: scrollSepolia.blockExplorers.default.url,
-//       apiUrl: scrollSepolia.blockExplorers.default.apiUrl,
-//     },
-//   ],
-// }
+
 const contract: any = getContract({
   client,
-  chain: scrollSepolia,
+  chain: baseSepolia,
   address: "0x39683204f4822A75A3264a9e6583e9105fAD3fAc",
   abi: ABI as any,
 });

@@ -8,26 +8,13 @@ import Button from "./Button";
 import { ConnectButton } from "thirdweb/react";
 import { inAppWallet, createWallet } from "thirdweb/wallets";
 import { client } from "@/constants";
-import { scrollSepolia } from "@/utils/chain";
-//import { scrollSepoliaTestnet } from "thirdweb/chains";
+import { baseSepolia } from "@/utils/chain";
 
-// const scrollSepoliaChain = {
-//   ...scrollSepolia,
-//   rpc: scrollSepolia.rpcUrls.default.http[0],
-//   blockExplorers: [
-//     {
-//       name: scrollSepolia.blockExplorers.default.name,
-//       url: scrollSepolia.blockExplorers.default.url,
-//       apiUrl: scrollSepolia.blockExplorers.default.apiUrl,
-//     },
-//   ],
-// }
 
 const wallets = [
   inAppWallet({
     smartAccount: {
-      chain: scrollSepolia,
-      //chain: scrollSepoliaTestnet,
+      chain: baseSepolia,
       sponsorGas: true,
     },
   }),
@@ -90,7 +77,7 @@ export default function NavBar() {
                     }}
                     autoConnect={true}
                     // chains={[myChain]}
-                    chains={[scrollSepolia]}
+                    chains={[baseSepolia]}
                     connectButton={{
                       label: "Connect Wallet",
                     }}
@@ -101,7 +88,7 @@ export default function NavBar() {
                     showAllWallets={false}
                     accountAbstraction={{
                       // chain: myChain,
-                      chain: scrollSepolia,
+                      chain: baseSepolia,
                       sponsorGas: true,
                     }}
                   />

@@ -45,7 +45,7 @@ import {
   Chain,
 } from "thirdweb";
 import ABI from "@/contract/localDAO/abi.json";
-import { scrollSepolia } from "@/utils/chain";
+import { baseSepolia } from "@/utils/chain";
 import {
   prepareContractCall,
   toWei,
@@ -60,7 +60,7 @@ const client: any = createThirdwebClient({
 
 const contract: any = getContract({
   client,
-  chain: scrollSepolia,
+  chain: baseSepolia,
   address: "0x39683204f4822A75A3264a9e6583e9105fAD3fAc",
   abi: ABI as any,
 });

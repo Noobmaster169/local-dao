@@ -21,8 +21,8 @@ Integrated World ID for a secure login to ensure that every individual users are
 2. TLS Notary
 Connect DApp will Real World Web2 Applications to fetch sensitive & important data while maintaining high privacy. TLS Notary will be used to generate Proof of Location that someone lives in a certain area to be eligible to participate in the DAO
 
-3. Scroll
-The Smart Contract for the application was deployed & verified on Scroll Sepolia Testnet.
+3. Base Layer Blockchain
+The Smart Contract for the application was deployed & verified on Base L2 Sepolia Testnet.
 
 Contract Addresses:
 Voting Manager: [https://sepolia.scrollscan.com/address/0x39683204f4822A75A3264a9e6583e9105fAD3fAc#code](https://sepolia.scrollscan.com/address/0x39683204f4822A75A3264a9e6583e9105fAD3fAc#code)
